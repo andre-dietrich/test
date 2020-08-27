@@ -7,6 +7,12 @@
   <body>
     <h1>orbit.db</h1>
 
+    <input id="database"></input>
+
+    <button onclick="window.start(document.getElementById('database').value)">connect</button>
+
+    <br>
+
     <input id="input"></input>
 
     <button onclick="window.db.put({'_id': Date().toLocaleString(), text: document.getElementById('input').value})">send</button>
