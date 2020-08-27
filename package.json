@@ -1,0 +1,31 @@
+{
+  "name": "orbit-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "browserslist": [
+    "last 20 Chrome versions"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npx parcel serve src/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ipfs": "^0.46.1",
+    "orbit-db": "^0.25.1",
+    "orbit-db-identity-provider": "^0.3.1",
+    "parcel": "^1.12.4",
+    "standard": "^14.3.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "babel": "^6.23.0",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-polyfill": "^6.26.0"
+  }
+}
