@@ -4,8 +4,25 @@ const Identities = require('orbit-db-identity-provider')
 
 // optional settings for the ipfs instance
 const ipfsOptions = {
+  start: true,
+  repo: "repo",
   EXPERIMENTAL: {
     pubsub: true
+  },
+  Bootstrap: [
+    "/dns4/ams-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLer265NRgSp2LA3dPaeykiS1J6DifTC88f5uVQKNAd",
+    "/dns4/sfo-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLju6m7xTh3DuokvT3886QRYqxAzb1kShaanJgW36yx",
+    "/dns4/lon-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLMeWqB7YGVLJN3pNLQpmmEk35v6wYtsMGLzSr5QBU3",
+    "/dns4/sfo-2.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLnSGccFuZQJzRadHn95W2CrSFmZuTdDWP8HXaHca9z",
+    "/dns4/sfo-3.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLPppuBtQSGwKDZT2M73ULpjvfd3aZ6ha4oFGL1KrGM",
+    "/dns4/sgp-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLSafTMBsPKadTEgaXctDQVcqN88CNLHXMkTNwMKPnu",
+    "/dns4/nyc-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLueR4xBeUbY9WZ9xGUUxunbKWcrNFTDAadQJmocnWm",
+    "/dns4/nyc-2.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLV4Bbm51jM9C4gDYZQ9Cy3U6aXMJDAbzgu2fzaDs64"
+  ],
+  Addresses: {
+    Swarm: [
+      '/libp2p-webrtc-star/dns4/star-signal.cloud.ipfs.team/wss'
+    ]
   }
 }
 
@@ -20,6 +37,10 @@ var doc = document.getElementById("state")
 console.warn("WWWWWWWWWWWWWWWWWWWWWW", Identities);
 
 doc.innerText += "ipfs.create ... "
+
+
+
+
 IPFS.create(ipfsOptions)
   .then((e) => {
     doc.innerText += " done"
@@ -53,13 +74,25 @@ IPFS.create(ipfsOptions)
             doc.innerText += " done"
             orbitDB = e
 
+
+
             doc.innerText += "\n createDB ... "
-            orbitDB.docs('test-db', {
+            orbitDB.docstore("/orbitdb/zdpuAucjzfourZAKL1NE9eY9pKoSZ9Z2PiP85FtLLzUcNbJ9t/test-db", {
+              create: false,
+              overwrite: false,
+              sync: true,
+              localOnly: false,
+              accessController: {
+                write: ["*"],
+              }
+            })
+
+            /*docs('test-db', {
               accessController: {
                 type: 'orbitdb', //OrbitDBAccessController
                 write: ["*"],
               }
-            })
+            })*/
               .then((e) => {
                 window.db = e;
 
@@ -77,6 +110,9 @@ IPFS.create(ipfsOptions)
                 console.warn("----", window.db.address.toString())
 
                 console.warn(window.db);
+
+
+
               })
           })
       })
