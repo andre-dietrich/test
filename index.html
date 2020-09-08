@@ -1,1 +1,16 @@
-<!doctype html><html lang="de"><head><title>orbit.db</title><script src="src.019bd376.js" async></script></head><body> <h1>orbit.db</h1> <input id="database"> <button onclick="window.start(document.getElementById('database').value)">connect</button> <br> <input id="input"> <button onclick="window.db.put({'_id': Date().toLocaleString(), text: document.getElementById('input').value})">send</button> <button onclick="document.getElementById('state').innerText = JSON.stringify(window.db.get(''))">aktualisiere</button> <div id="state"></div> </body></html>
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Elm + Websockets</title>
+
+  <script defer="" type="text/javascript" src="https://cdn.scaledrone.com/scaledrone.min.js"></script>
+  <script defer="" type="text/javascript" src="/src.7ed060e2.js"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+</body>
+
+</html>

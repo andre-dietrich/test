@@ -13,7 +13,7 @@ const ipfsOptions = {
       enabled: true, hop: {
           enabled: true, active: true
         }
-    }
+    },
   /*,
   Bootstrap: [
     "/dns4/ams-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLer265NRgSp2LA3dPaeykiS1J6DifTC88f5uVQKNAd",
@@ -24,12 +24,12 @@ const ipfsOptions = {
     "/dns4/sgp-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLSafTMBsPKadTEgaXctDQVcqN88CNLHXMkTNwMKPnu",
     "/dns4/nyc-1.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLueR4xBeUbY9WZ9xGUUxunbKWcrNFTDAadQJmocnWm",
     "/dns4/nyc-2.bootstrap.libp2p.io/tcp/443/wss/ipfs/QmSoLV4Bbm51jM9C4gDYZQ9Cy3U6aXMJDAbzgu2fzaDs64"
-  ],
+  ],*/
   Addresses: {
     Swarm: [
       '/libp2p-webrtc-star/dns4/star-signal.cloud.ipfs.team/wss'
     ]
-  }*/
+  }
 }
 
  // Create IPFS instance with optional config
